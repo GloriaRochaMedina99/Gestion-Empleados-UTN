@@ -1,0 +1,68 @@
+{
+  "departamentos": [
+    {
+      "id": 1,
+      "nombre": "Sistemas",
+      "responsable": "Ing. Carlos Pérez"
+    },
+    {
+      "id": 2,
+      "nombre": "Recursos Humanos",
+      "responsable": "Lic. Ana Gómez"
+    }
+  ],
+  "empleados": [
+    {
+      "id": 1,
+      "departamentoId": 1,
+      "nombre": "Laura Martínez",
+      "cargo": "Desarrolladora",
+      "fechaIngreso": "2024-03-01"
+    },
+    {
+      "id": 2,
+      "departamentoId": 2,
+      "nombre": "Pedro Ramírez",
+      "cargo": "Analista RRHH",
+      "fechaIngreso": "2024-05-10"
+    }
+  ],
+  "asistencias": [
+    {
+      "id": 1,
+      "empleadoId": 1,
+      "fecha": "2025-06-15",
+      "estado": "Ausente"
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Tardanza",
+      "id": 2
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 3
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 4
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 5
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 6
+    }
+  ]
+}
