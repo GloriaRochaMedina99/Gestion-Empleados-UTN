@@ -1,0 +1,392 @@
+/* ==========================================================
+   Panel de Administración de Empleados - Estilos
+   Diseño pensado para escritorio (y adaptable a pantallas chicas).
+   Todas las medidas están en rem: al subir el tamaño base de la
+   fuente en pantallas grandes, TODA la interfaz escala junta.
+   ========================================================== */
+
+/* ---------- Variables (paleta y medidas centralizadas) ---------- */
+:root {
+    --color-primario: #1f3a8a;
+    --color-primario-hover: #172b69;
+    --color-fondo: #f3f4f6;
+    --color-superficie: #ffffff;
+    --color-borde: #d1d5db;
+    --color-texto: #111827;
+    --color-texto-suave: #6b7280;
+    --color-error: #dc2626;
+    --color-ok: #16a34a;
+    --color-aviso: #d97706;
+    --radio: 0.5rem;
+    --sombra: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --ancho-maximo: 1500px;
+}
+
+/* ---------- Escala tipográfica por tamaño de pantalla ----------
+   Móvil/tablet: 16px | PC estándar (≥1200px): 18px | PC grande (≥1700px): 19px */
+html {
+    font-size: 100%;
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 112.5%;
+    }
+}
+
+@media (min-width: 1700px) {
+    html {
+        font-size: 118.75%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* ---------- Estructura ---------- */
+header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 0.4rem;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.85;
+}
+
+/* Contenedor principal: aprovecha el ancho de la PC sin estirarse de más */
+main {
+    width: 94%;
+    max-width: var(--ancho-maximo);
+    margin: 2rem auto;
+}
+
+section {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    margin: 1.5rem 0 0.75rem;
+    font-size: 1.15rem;
+}
+
+/* ---------- Formularios (grilla: los campos se reparten el ancho) ---------- */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.75rem;
+    align-items: start;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+.campo label,
+.filtro label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
+}
+
+/* Los botones del formulario van en su propia fila, alineados a la izquierda */
+.acciones {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+}
+
+input,
+select {
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    background-color: white;
+}
+
+.filtro select {
+    width: auto;
+    min-width: 16rem;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 1px;
+}
+
+/* Estado de error de validación */
+input.invalid,
+select.invalid {
+    border-color: var(--color-error);
+    background-color: #fef2f2;
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+}
+
+/* ---------- Botones ---------- */
+button {
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.btn-danger {
+    background-color: var(--color-error);
+    border-color: var(--color-error);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.btn-edit {
+    background-color: #dbeafe;
+    border-color: #93c5fd;
+    color: var(--color-texto);
+}
+
+.btn-edit:hover {
+    background-color: #bfdbfe;
+}
+
+/* ---------- Tarjetas ---------- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1.25rem;
+}
+
+.card {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1.25rem;
+    background-color: var(--color-superficie);
+}
+
+.card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin: 0.3rem 0;
+}
+
+.card button {
+    margin: 0.75rem 0.4rem 0 0;
+}
+
+.vacio {
+    color: var(--color-texto-suave);
+    font-style: italic;
+}
+
+/* ---------- Badges de estado ---------- */
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+}
+
+.badge-presente { background-color: var(--color-ok); }
+.badge-ausente  { background-color: var(--color-error); }
+.badge-tardanza { background-color: var(--color-aviso); }
+
+/* ---------- Resumen y estadísticas ---------- */
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.contador {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-fondo);
+}
+
+.contador strong {
+    display: block;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.contador span {
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+}
+
+.contador.presente strong { color: var(--color-ok); }
+.contador.ausente strong  { color: var(--color-error); }
+.contador.tardanza strong { color: var(--color-aviso); }
+
+.tabla-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+th,
+td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+th {
+    background-color: var(--color-fondo);
+    font-size: 0.9rem;
+}
+
+.barra {
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    height: 0.7rem;
+    overflow: hidden;
+    min-width: 8rem;
+}
+
+.barra-relleno {
+    background-color: var(--color-ok);
+    height: 100%;
+}
+
+.porcentaje {
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+}
+
+/* ---------- Toast (mensajes) ---------- */
+#toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.9rem 1.4rem;
+    border-radius: var(--radio);
+    color: white;
+    font-size: 1rem;
+    background-color: var(--color-ok);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+#toast.visible {
+    opacity: 1;
+}
+
+#toast.toast-error {
+    background-color: var(--color-error);
+}
+
+/* ---------- Pantallas chicas (tablet / celular) ---------- */
+@media (max-width: 700px) {
+    main {
+        width: 96%;
+    }
+
+    section {
+        padding: 1.25rem 1rem;
+    }
+
+    .filtro select {
+        width: 100%;
+        min-width: 0;
+    }
+}
