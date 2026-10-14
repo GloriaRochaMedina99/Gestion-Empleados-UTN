@@ -8,9 +8,8 @@ Aplicación web para gestionar el personal de una organización: permite adminis
 
 ## 🌐 Demo en línea
 
-> 🔗 **GitHub Pages:** [https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/](https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/)
->
-> *(Reemplazar `TU-USUARIO` y `NOMBRE-DEL-REPOSITORIO` por los datos reales del repositorio.)*
+- 🔗 **GitHub Pages:** [https://gloriarochamedina99.github.io/Gestion-Empleados-UTN/](https://gloriarochamedina99.github.io/Gestion-Empleados-UTN/)
+
 
 ---
 
