@@ -35,34 +35,10 @@
       "estado": "Ausente"
     },
     {
+      "id": 2,
       "empleadoId": 1,
-      "fecha": "29/6/2026",
-      "estado": "Tardanza",
-      "id": 2
-    },
-    {
-      "empleadoId": 1,
-      "fecha": "29/6/2026",
-      "estado": "Presente",
-      "id": 3
-    },
-    {
-      "empleadoId": 1,
-      "fecha": "29/6/2026",
-      "estado": "Presente",
-      "id": 4
-    },
-    {
-      "empleadoId": 1,
-      "fecha": "29/6/2026",
-      "estado": "Presente",
-      "id": 5
-    },
-    {
-      "empleadoId": 1,
-      "fecha": "29/6/2026",
-      "estado": "Presente",
-      "id": 6
+      "fecha": "2026-06-29",
+      "estado": "Tardanza"
     }
   ]
 }
